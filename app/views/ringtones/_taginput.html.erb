@@ -3,8 +3,10 @@
 <%= simple_form_for(@ringtone, html: { class:'form-inline' }, remote: true ) do |f| %>
 <!--   <%= f.input :tag_list , label: false %>
  -->  
-  <%= f.autocomplete_field :tag_list , autocomplete_ringtone_tag_ringtones_path , label: false %>
-  
+  <%= f.autocomplete_field :tag_list , autocomplete_tag_name_ringtones_path , 'data-delimiter' => ',' , multiple: true, 'data-role' => 'tagsinput', label: false %>
+<!-- 
+  <%= f.autocomplete_field :tag_list , autocomplete_tag_name_ringtones_path , 'data-delimiter' => ',' , multiple: true, label: false %>
+ -->
   <%= f.button :submit ,id: dom_id(@ringtone)+"_tagsave",  class: "btn btn-primary btn-sm" , value: "save" %>
 
 <% end %>

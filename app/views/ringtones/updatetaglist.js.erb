@@ -3,6 +3,8 @@
 //alert
 $("#ringtone_<%= @ringtone.id %>_tagicon").parent().hide().after("<%= j render('taginput') %>");
 
+$("#ringtone_tag_list").tagsInput() 
+
 $("#ringtone_<%= @ringtone.id %>_tagarea").hide();
 
 $("#ringtone_<%= @ringtone.id %>_tagsave").click(function() {

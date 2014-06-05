@@ -1,5 +1,7 @@
 class RingtonesController < ApplicationController
-   autocomplete :ringtone, :tag
+   autocomplete :tag, :name, class_name: "ActsAsTaggableOn::Tag"
+   # autocomplete :ringtone, :tag#, display_value: :tag_list_to_autocomplete
+   # autocomplete :ringtone, :name#, display_value: :tag_list_to_autocomplete
 
   # GET /ringtones
   # GET /ringtones.json

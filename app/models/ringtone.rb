@@ -1,9 +1,12 @@
 class Ringtone < ActiveRecord::Base
   
-  # this tag here store all Ringtone tag_list for autoacomplete since :tag_list is hardly to make it work
-  # todo rename :tag to :alltags
+  # 这里两者是等价的，所以 :tag 不是必须的
+  # acts_as_taggable # Alias for
+  # acts_as_taggable_on :tags
+  # rails3 autocomplete 和 ActAsTaggble的解决方案是 SO 上找到的
+
   attr_accessible :name, :tag, :attachment, :tag_list
-  acts_as_taggable
+  acts_as_taggable_on :tags
 
   mount_uploader :attachment , AudioattachmentUploader
 
@@ -13,14 +16,16 @@ class Ringtone < ActiveRecord::Base
   # as 用在多态的地方
   # has_many :attachments, as: :attachmentable
   before_save :set_attachment_attributes
-  before_save :set_tag
+  # before_save :set_tag
+
+  def tag_list_to_autocomplete
+    # %w(this is cool)
+    "cool"
+    # Ringtone.tag_counts_on(:tags)
+  end
 
   protected
-
   def set_tag 
-    # binding.pry
-    # self.tag = self.tag_list.to_s
-    self.tag = ""
     Ringtone.tag_counts_on(:tags).map do |tag| 
       # binding.pry
       self.tag+=tag.name.to_s << ","

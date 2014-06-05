@@ -12,8 +12,9 @@ TestNew::Application.routes.draw do
       get 'tagcloud'
       post "multiupload"
       get "sidebarform"
+      get :autocomplete_tag_name
       # get :autocomplete_ringtone_tag_list
-      get :autocomplete_ringtone_tag
+      # get :autocomplete_ringtone_name
       # get "multiupload"
     end
   end
