@@ -1,0 +1,19 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  index:
+    title: "Ringtone List"
+    upload_bt: "muti upload"
+    new_ringtone: "New Ringtone～"
+  main_tb:
+    name: "name"
+    tag: "tag"
+    attachment: "attachment"
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+ 
+  <%= simple_form_for( '', url: multiupload_ringtones_path, html: { id: "fileupload", class:'form-inline fr hide', multipart: true}, remote: true ) do |f| %>
+
+ 	<%= f.input :attachment , label: false, input_html: { multiple: true, style: "width:80px" }, as: :file %>
+
+<!--  	<%= f.button :submit , id: "fileupload_submit", class: "btn btn-primary btn-sm", value: "上传铃声" %>
+ --> 
+
+ <% end %>

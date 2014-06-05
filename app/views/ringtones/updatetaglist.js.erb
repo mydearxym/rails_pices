@@ -1,0 +1,30 @@
+
+
+//alert
+$("#ringtone_<%= @ringtone.id %>_tagicon").parent().hide().after("<%= j render('taginput') %>");
+
+$("#ringtone_<%= @ringtone.id %>_tagarea").hide();
+
+$("#ringtone_<%= @ringtone.id %>_tagsave").click(function() {
+	$(this).parent().hide();
+	$("#ringtone_<%= @ringtone.id %>_tagicon").parent().show()
+	$("#ringtone_<%= @ringtone.id %>_tagarea").show();
+
+	setTimeout(function(){
+		// delay beacaue to make sure the form submit is done
+		// or disable the form submit btn, and use jquery to submit
+		$.get('<%= taglist_ringtone_path %>', { id: "<%= @ringtone.id %>" } , function(data) {
+			// console.log("get taglist:" + data);
+			$("#ringtone_<%= @ringtone.id %>_tagarea").html(data);
+		});
+
+		$.get('<%= tagcloud_ringtones_path %>', function(data) {
+			console.log("refresh tag cloud");
+			$("#tag_cloud").html(data);
+		});
+
+	}, 300);
+
+});  
+
+

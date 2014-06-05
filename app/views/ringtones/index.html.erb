@@ -1,0 +1,52 @@
+
+
+<div id="process_area"></div>
+<h1 class="text-danger"><%= image_tag("gogo_logo.png") %>  <%= t 'index.title' %> </h1>
+
+<div id="tag_cloud">
+ <%= render "tagcloud" %>
+</div>
+
+<%= render "multiupload" %>
+<a id="upload-menu" class="btn btn-primary btn-sm fr">上传铃声</a>
+<br></br>
+<table class="table  table-condensed table-hover">
+<tbody id="main_table">
+  <tr class="active">
+    <th><%= t 'main_tb.name' %></th>
+    <th><%= image_tag("tag_icon_24.png") %><%= t 'main_tb.tag' %></th>
+    <th><%= image_tag("attachment_16.png") %><%= t 'main_tb.attachment' %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @ringtones.each do |ringtone| %>
+  <tr class="tag_parent">
+    <td><%= ringtone.name %></td>
+    <!-- 两个坑 1. updatetaglist_ringtone_path 必须传参,like edit -->
+    <!-- 2. 如果是 post ,必须指定 method: :post , 否则默认的 get 方法找不到 -->
+    <!-- 3. 这里的逻辑是把 编辑tag 的图标指向 updatetaglist 这个 action ，-->
+    <!--    而这个 action 返回的 tag partial 里的 form 实际上还是指向 edit/create 的(rails会帮你搞定), 非常优雅的设计-->
+    <td class="tag_column"><span id="<%= dom_id(ringtone)+"_tagarea" %>"><%= raw ringtone.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></span><%= link_to image_tag("edit_16.png", class:"tag_icon", id:dom_id(ringtone)+"_tagicon"), updatetaglist_ringtone_path(ringtone) , method: :post, remote: true %></td>
+    <td><%= has_attachment?(ringtone) %></td>
+    <td class="table_opt"><%= link_to image_tag("show_icon.png", :class => "table_opt_icon"), ringtone %></td>
+    <td class="table_opt"><%= link_to image_tag("edit_16.png", :class => "table_opt_icon"), edit_ringtone_path(ringtone) %></td>
+    <!-- 注意这里神奇的 dom_id 方法-->
+    <td id="<%= dom_id ringtone %>_destory" class="table_opt"><%= link_to image_tag("delete_icon.png", :class => "table_opt_icon") , ringtone, method: :delete, remote: true %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+<br />
+
+<%= link_to t('index.new_ringtone'), new_ringtone_path ,id: "new_link", remote: true %>
+    
+</div>
+<script id="template-upload" type="text/x-tmpl">
+</script>
+
+
+
+
+

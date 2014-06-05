@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ringtone.name %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @ringtone.tag %>
+</p>
+
+<p>
+  <b>Attachment:</b>
+  <%= show_attachment_info(@ringtone) %>
+  <!-- <%= @ringtone.tag %> -->
+</p>
+
+
+<%= link_to image_tag("edit_32.png"), edit_ringtone_path(@ringtone) %> |
+<%= link_to image_tag("back_24.png"), ringtones_path %>

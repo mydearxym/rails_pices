@@ -1,0 +1,11 @@
+
+zh:
+  index:
+    title: "铃声狗狗的列表"
+    upload_bt: "批量上传"
+    new_ringtone: "创 建"
+  main_tb:
+    name: "名称"
+    tag: "标签"
+    attachment: "附件"
+

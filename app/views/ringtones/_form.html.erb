@@ -1,0 +1,13 @@
+
+
+  <%= simple_form_for(@ringtone , html: { multipart: true }, remote: true) do |f| %>
+  <%= f.error_notification %>
+  
+  <%= f.input :name , hint: "this is a hint", class: "hello" %>
+  <%= f.input :tag_list, label: "Tags (separated by commas) " %>
+  <%= f.input :attachment , label: "选择附件", as: :file %>
+  <%= f.button :submit  %>
+
+  <% end %>
+
+
