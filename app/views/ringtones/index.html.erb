@@ -7,6 +7,7 @@
  <%= render "tagcloud" %>
 </div>
 
+<button id="test">test</button>
 <%= render "multiupload" %>
 <a id="upload-menu" class="btn btn-primary btn-sm fr">上传铃声</a>
 <br></br>
@@ -28,7 +29,7 @@
     <!-- 2. 如果是 post ,必须指定 method: :post , 否则默认的 get 方法找不到 -->
     <!-- 3. 这里的逻辑是把 编辑tag 的图标指向 updatetaglist 这个 action ，-->
     <!--    而这个 action 返回的 tag partial 里的 form 实际上还是指向 edit/create 的(rails会帮你搞定), 非常优雅的设计-->
-    <td class="tag_column"><span id="<%= dom_id(ringtone)+"_tagarea" %>"><%= raw ringtone.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></span><%= link_to image_tag("edit_16.png", class:"tag_icon", id:dom_id(ringtone)+"_tagicon"), updatetaglist_ringtone_path(ringtone) , method: :post, remote: true %></td>
+    <td class="tag_column"><span id="<%= dom_id(ringtone)+"_tagarea" %>"><%= raw ringtone.tag_list.map { |t| link_to t, tag_path(t), class: "my_tag" }.join(' ')  %></span><%= link_to image_tag("edit_16.png", class:"tag_icon", id:dom_id(ringtone)+"_tagicon"), updatetaglist_ringtone_path(ringtone) , method: :post, remote: true %></td>
     <td><%= has_attachment?(ringtone) %></td>
     <td class="table_opt"><%= link_to image_tag("show_icon.png", :class => "table_opt_icon"), ringtone %></td>
     <td class="table_opt"><%= link_to image_tag("edit_16.png", :class => "table_opt_icon"), edit_ringtone_path(ringtone) %></td>

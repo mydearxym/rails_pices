@@ -2,15 +2,17 @@
 
 //alert
 $("#ringtone_<%= @ringtone.id %>_tagicon").parent().hide().after("<%= j render('taginput') %>");
-
-$("#ringtone_tag_list").tagsInput() 
+// make dymic id or strange bug
+$("#ringtone_<%= @ringtone.id %>_taginput").tagsInput({
+	'defaultText':'+添加',
+});
 
 $("#ringtone_<%= @ringtone.id %>_tagarea").hide();
-
 $("#ringtone_<%= @ringtone.id %>_tagsave").click(function() {
 	$(this).parent().hide();
 	$("#ringtone_<%= @ringtone.id %>_tagicon").parent().show()
 	$("#ringtone_<%= @ringtone.id %>_tagarea").show();
+	$("#ringtone_<%= @ringtone.id %>_tagpool").remove();
 
 	setTimeout(function(){
 		// delay beacaue to make sure the form submit is done
@@ -26,7 +28,14 @@ $("#ringtone_<%= @ringtone.id %>_tagsave").click(function() {
 		});
 
 	}, 300);
-
 });  
+
+// $("#ringtone_tag_list").tagsInput({
+// 	// todo autocomplete_url
+// 	'defaultText':'+添加',
+// });
+
+
+
 
 

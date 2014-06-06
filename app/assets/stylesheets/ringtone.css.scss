@@ -48,6 +48,61 @@
   width: 80px;
 }
 
+.my_tag { 
+  border: 1px solid #a5d24a;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px; 
+  display: block;
+  float: left;
+  // padding: 5px; 
+  text-decoration:none; 
+  background: #cde69c;
+  color: #638421; 
+  margin-right: 5px; 
+  margin-bottom:5px;
+  font-family: helvetica; 
+  font-size:13px;
+  font-weight: bold;
+ }
+.my_tagpool { 
+  border: 1px solid #a5d24a;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px; 
+  display: block;
+  float: left;
+  // padding: 5px; 
+  text-decoration:none; 
+  background: #e6d864;
+  color: #847435; 
+  margin-right: 5px; 
+  margin-bottom:5px;
+  font-family: helvetica; 
+  font-size:13px;
+  font-weight: bold;
+ }
+
+
+
+
+// overwrite 
+div.tagsinput { 
+  border:1px solid #CCC;
+  background: #FFF;
+  padding:5px; 
+  width:300px; 
+  // height:100px; 
+  overflow-y: auto;
+}
+
+.my_tag:hover {
+ color: #ff7f24;
+ font-weight: bold;
+ text-decoration:none;
+}
+
+.tag_save_btn {
+  margin-bottom: 22px
+}
 
 
 

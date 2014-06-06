@@ -30,4 +30,20 @@ module RingtonesHelper
         end
         tag_links
     end
+
+    def tag_pool()
+        tags = Ringtone.tag_counts_on(:tags)
+        tag_spans = ''
+
+        tags.each do |tag|
+            # tag_spans+='<span class="my_tag">' + tag.name +'</span>'
+            tag_spans+=content_tag(:span, tag.name, class: "my_tagpool")
+        end
+        # binding.pry
+        tag_spans
+    end
 end
+
+
+
+
