@@ -9,17 +9,21 @@ class RingtonesController < ApplicationController
     # @ringtones = Ringtone.all
     # binding.pry
     if params[:tag]
-      @ringtones = Ringtone.tagged_with(params[:tag])
+      # @ringtones = Ringtone.tagged_with(params[:tag])
+      @ringtones = Ringtone.tagged_with(params[:tag]).page(params[:page]).per(6)
     else
-      @ringtones = Ringtone.all
+      @ringtones = Ringtone.order(:name).page(params[:page]).per(6)
+      # @results = Kaminari.paginate_array(Ringtone.all).page(params[:page])
+      # @ringtones = Ringtone.all
     end
-    
+    # binding.pry
     respond_to do |format|
+      format.js #index.js.erb
       format.html # index.html.erb
       format.json { render json: @ringtones }
     end
   end
-
+  
   # GET /ringtones/1
   # GET /ringtones/1.json
   def show

@@ -120,6 +120,9 @@ GEM
     jquery-ui-rails (4.1.2)
       railties (>= 3.1.0)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.9.2)
     launchy (2.3.0)
       addressable (~> 2.3)
@@ -244,6 +247,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   jquery-ui-rails
+  kaminari
   launchy (~> 2.3.0)
   less-rails
   mime-types

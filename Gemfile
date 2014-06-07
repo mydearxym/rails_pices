@@ -46,6 +46,7 @@ gem 'mime-types'
 
 gem 'simple_form', :git => "https://github.com/plataformatec/simple_form.git", branch: "v2.2"
 # and  check this gist :  https://gist.github.com/tokenvolt/6599141
+gem 'kaminari'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"

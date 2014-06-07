@@ -106,11 +106,7 @@ $(document).ready(function(){
 
   });
 
-  $("#test").click(function(event) {
-    $("#ringtone_tag_list").tagsInput({
-      'defaultText':'+添加',
-    });
-  });
+
 });
 
 

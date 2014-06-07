@@ -37,7 +37,7 @@ module RingtonesHelper
 
         tags.each do |tag|
             # tag_spans+='<span class="my_tag">' + tag.name +'</span>'
-            tag_spans+=content_tag(:span, tag.name, class: "my_tagpool")
+            tag_spans+=content_tag(:span, tag.name, class: "my_tagpool_item")
         end
         # binding.pry
         tag_spans

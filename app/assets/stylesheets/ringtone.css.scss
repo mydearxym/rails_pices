@@ -20,6 +20,11 @@
 	width:400px;
 }
 
+.tag_column_name {
+  width:300px;
+}
+
+
 #tag_cloud {
   width: 400px;
   line-height: 1.6em;
@@ -64,7 +69,8 @@
   font-size:13px;
   font-weight: bold;
  }
-.my_tagpool { 
+
+.my_tagpool_item { 
   border: 1px solid #a5d24a;
   -moz-border-radius:2px;
   -webkit-border-radius:2px; 
@@ -79,6 +85,7 @@
   font-family: helvetica; 
   font-size:13px;
   font-weight: bold;
+  cursor: pointer;
  }
 
 

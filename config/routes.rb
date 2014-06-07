@@ -13,6 +13,7 @@ TestNew::Application.routes.draw do
       post "multiupload"
       get "sidebarform"
       get :autocomplete_tag_name
+      get "forpage"
       # get :autocomplete_ringtone_tag_list
       # get :autocomplete_ringtone_name
       # get "multiupload"

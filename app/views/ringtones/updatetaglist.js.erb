@@ -30,10 +30,14 @@ $("#ringtone_<%= @ringtone.id %>_tagsave").click(function() {
 	}, 300);
 });  
 
-// $("#ringtone_tag_list").tagsInput({
-// 	// todo autocomplete_url
-// 	'defaultText':'+添加',
-// });
+$(".my_tagpool_item").click(function(){
+	var tag = $(this).html();
+	
+	console.log("click tag is " + tag);
+	$("#ringtone_<%= @ringtone.id %>_taginput").addTag(tag);
+
+});
+
 
 
 

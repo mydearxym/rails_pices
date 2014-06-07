@@ -3,7 +3,7 @@
  	<td><%= @ringtone.name %></td>
 <!--    	<td class="tag_column"><%= raw @ringtone.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %><%= image_tag("edit_16.png", class:"tag_icon", data: {id: @ringtone.id}) %></td>
  -->
-   	<td class="tag_column"><span id="<%= dom_id(@ringtone)+"_tagarea" %>"><%= raw @ringtone.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')  %></span><%= link_to image_tag("edit_16.png", class:"tag_icon", id:dom_id(@ringtone)+"_tagicon"), updatetaglist_ringtone_path(@ringtone) , method: :post, remote: true %></td>
+   	<td class="tag_column"><span id="<%= dom_id(@ringtone)+"_tagarea" %>"><%= raw @ringtone.tag_list.map { |t| link_to t, tag_path(t), class: "my_tag" }.join(' ')  %></span><%= link_to image_tag("edit_16.png", class:"tag_icon", id:dom_id(@ringtone)+"_tagicon"), updatetaglist_ringtone_path(@ringtone) , method: :post, remote: true %></td>
 
    	<td><%= has_attachment?(@ringtone) %></td>
    	<td class="table_opt"><%= link_to image_tag("show_icon.png", :class => "table_opt_icon"), @ringtone %></td>
