@@ -22,12 +22,12 @@ $(document).ready(function(){
     //  其次只有这种绑定 doeument 的写法可以保证新添加的元素不用重新加载 script
     //  写法 1
 
-    $(document).on({
+    return $(document).on({
         mouseenter: function(){
-            $(this).find('img').show();
+          return $(this).find('img').show();
         }, 
         mouseleave: function(){
-            $(this).find('img').hide();
+          return $(this).find('img').hide();
         }
         
     }, '.tag_column');
@@ -49,7 +49,7 @@ $(document).ready(function(){
       add: function(e, data) {
         // one file toggle once
         var file, types;
-        var each_progress_bar; 
+        var each_progress_bar; d
         
         types = /(\.|\/)(gif|jpe?g|zip|tbz)$/i;
         file = data.files[0];

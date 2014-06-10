@@ -10,11 +10,11 @@ class RingtonesController < ApplicationController
     # binding.pry
     if params[:tag]
       # @ringtones = Ringtone.tagged_with(params[:tag])
-      @ringtones = Ringtone.tagged_with(params[:tag]).page(params[:page]).per(6)
+      @ringtones = Ringtone.tagged_with(params[:tag]).page(params[:page]).per(10)
     else
-      @ringtones = Ringtone.order(:name).page(params[:page]).per(6)
-      # @results = Kaminari.paginate_array(Ringtone.all).page(params[:page])
       # @ringtones = Ringtone.all
+      @ringtones = Ringtone.order(:name).page(params[:page]).per(10)
+      # @results = Kaminari.paginate_array(Ringtone.all).page(params[:page])
     end
     # binding.pry
     respond_to do |format|
