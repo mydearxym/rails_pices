@@ -61,7 +61,7 @@ group :test do
   gem "selenium-webdriver", "~> 2.39.0"
 end
 
-
+gem 'rake', '10.3.2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -69,12 +69,12 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano', '2.15.5'
+gem 'rvm-capistrano'
 gem 'net-ssh', '~>2.7.0'
-#gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'
