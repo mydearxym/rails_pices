@@ -41,7 +41,7 @@ end
 # gem 'jquery-rails', '~> 3.1.0'
 gem 'jquery-rails'
 gem 'carrierwave'
-gem 'rmagick' # fisrt  brew install imagemagick
+# gem 'rmagick' # fisrt  brew install imagemagick
 gem 'mime-types'
 
 gem 'simple_form', :git => "https://github.com/plataformatec/simple_form.git", branch: "v2.2"
