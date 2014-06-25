@@ -1,15 +1,15 @@
 
-
-
   <div id="paginate">
     <%= paginate @ringtones, remote: true %>
   </div>
-  
-  <!-- <table class="table  table-condensed table-hover" id="main_table"> -->
+
+
+      
+     <!-- <table class="table  table-condensed table-hover" id="main_table"> -->
   <table class="table  table-condensed table-hover">
     <tbody id="main_table">
       <tr class="active">
-        <th><%= t 'main_tb.name' %></th>
+        <th><%= t 'main_tb.name'%></th>
         <th><%= image_tag("tag_icon_24.png") %><%= t 'main_tb.tag' %></th>
         <th><%= image_tag("attachment_16.png") %><%= t 'main_tb.attachment' %></th>
         <th></th>

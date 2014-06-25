@@ -55,9 +55,12 @@ namespace :deploy do
     desc "@@@ restart "
     task :restart do
         puts "@@@ now restart the server ..."
-        run "cd #{release_path}; pwd"
+        puts "@@@ now stop ..."
+        run "kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
+        puts "@@@ now start ..."
+        run "cd #{deploy_to}/current/; bundle exec unicorn_rails -c config/unicorn.rb -D"
+        puts "@@@ restart over ..."
     end
-
 end
 
 before 'deploy:setup', "deploy:create_log_share"

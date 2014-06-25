@@ -1,5 +1,8 @@
 
 $(document).ready -> 
+  window.log = _.bind console.log, console
+
+  
   $(document).on
     mouseenter: ->
       $(this).find("img").show()

@@ -14,5 +14,6 @@
 #/log/*.log
 /log/development.log
 /tmp
+/config/deploy.rb
 config/database.yml
 

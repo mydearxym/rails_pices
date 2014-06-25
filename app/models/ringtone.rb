@@ -17,7 +17,7 @@ class Ringtone < ActiveRecord::Base
   # has_many :attachments, as: :attachmentable
   before_save :set_attachment_attributes
   # before_save :set_tag
-
+  
   def tag_list_to_autocomplete
     # %w(this is cool)
     "cool"

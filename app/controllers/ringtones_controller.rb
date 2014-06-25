@@ -8,6 +8,7 @@ class RingtonesController < ApplicationController
   def index
     # @ringtones = Ringtone.all
     # binding.pry
+    logger.debug "############# }see me ?"
     if params[:tag]
       # @ringtones = Ringtone.tagged_with(params[:tag])
       @ringtones = Ringtone.tagged_with(params[:tag]).page(params[:page]).per(10)
@@ -17,6 +18,7 @@ class RingtonesController < ApplicationController
       # @results = Kaminari.paginate_array(Ringtone.all).page(params[:page])
     end
     # binding.pry
+    
     respond_to do |format|
       format.js #index.js.erb
       format.html # index.html.erb

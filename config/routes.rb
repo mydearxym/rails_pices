@@ -1,6 +1,8 @@
 TestNew::Application.routes.draw do
   # get "home/index"
   root to: 'ringtones#index'
+
+  get '', to: 'ringtones#index', as: :bbb
   
   devise_for :users
   resources :ringtones do
