@@ -68,10 +68,10 @@ TestNew::Application.configure do
   #   IRB = Pry 
   # end
 
-  class Zeus::Rails
-    def console
-      Pry.start
-    end 
-  end
+  # class Zeus::Rails
+  #   def console
+  #     Pry.start
+  #   end 
+  # end
 
 end
