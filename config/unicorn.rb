@@ -2,7 +2,8 @@
 rails_env = ENV['RAILS_ENV'] || 'production'
 app_path = "/usr/local/ringgogo/current"
 
-listen "/tmp/unicorn.ringgogo.sock"
+# listen "/tmp/unicorn.ringgogo.sock"
+listen "127.0.0.1:3003"
 worker_processes 4
 
 pid "#{app_path}/tmp/pids/unicorn.pid"
