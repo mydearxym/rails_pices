@@ -1,8 +1,12 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
 
+
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+
 proj_name="ringgogo"
 
+set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system  # solve the bundler can't found problem
 set :log_level, :debug
 set :pty, true
@@ -13,6 +17,7 @@ set :repository,  "https://github.com/mydearxym/rails_pices.git"
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :branch, 'master'
 set :scm_username, "mydearxym" 
 set :scm_password, "Woshiyingcai710" 
 
@@ -22,8 +27,46 @@ set :deploy_to, "/usr/local/#{proj_name}"
 
 server '115.29.138.203', :web, :app, :db , :primary => true
 
-before 'deploy:setup', 'rvm:install_rvm' 
-before 'deploy:setup', 'bundle upadte rake' 
+
+namespace :deploy do 
+    desc "@@@ mkdir a dir log Cap, or will trigger error"
+    task :create_log_share do
+        run "mkdir -p #{shared_path}/log"
+        # run "apt-get install ruby-bundler"
+    end
+
+    desc "@@@ installl the bundler"
+    task :install_bundler do
+        run "cd /usrl/local/#{proj_name}; bundle "
+    end
+
+    desc "@@@ use ruby 1.9.3"
+    task :use_1_9_3 do
+        run "rvm use 1.9.3"
+    end
+
+    desc "@@@ rewirte migrate"
+    task :migrate do
+        puts "@@@ now migrate the db ..."
+        # default migrate case tags gem problem
+        run "cd #{release_path}; bundle exec rake db:migrate"
+    end
+
+    desc "@@@ restart "
+    task :restart do
+        puts "@@@ now restart the server ..."
+        run "cd #{release_path}; pwd"
+    end
+
+end
+
+before 'deploy:setup', "deploy:create_log_share"
+after 'deploy:update_code', 'deploy:migrate'
+
+
+# before 'deplay:cold', "deploy:use_1_9_3"
+# after 'deplay:cold', "deploy:install_bundler"
+
 
 #role :web, "115.29.138.203"                          # Your HTTP server, Apache/etc
 #role :app, "115.29.138.203"                          # This may be the same as your `Web` server
