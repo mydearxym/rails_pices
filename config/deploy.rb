@@ -49,14 +49,14 @@ namespace :deploy do
     task :migrate do
         puts "@@@ now migrate the db ..."
         # default migrate case tags gem problem
-        run "cd #{release_path}; bundle exec rake db:migrate"
+        # run "cd #{release_path}; bundle exec rake db:migrate"
     end
 
     desc "@@@ restart "
     task :restart do
         puts "@@@ now restart the server ..."
         puts "@@@ now stop ..."
-        run "kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
+        run "ls #{deploy}/current/tmp/pids/unicorn.pid && kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
         puts "@@@ now start ..."
         run "cd #{deploy_to}/current/; bundle exec unicorn_rails -c config/unicorn.rb -D"
         puts "@@@ restart over ..."
