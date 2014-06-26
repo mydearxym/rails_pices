@@ -19,10 +19,8 @@ set :scm, :git # You can set :scm explicitly or Capistrano will make an intellig
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :branch, 'master'
 set :scm_username, "mydearxym" 
-set :scm_password, "Woshiyingcai710" 
 
 set :user, "root"
-set :password, "luolongzhi123456"
 set :deploy_to, "/usr/local/#{proj_name}"
 
 server '115.29.138.203', :web, :app, :db , :primary => true
