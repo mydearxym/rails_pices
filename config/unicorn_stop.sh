@@ -6,8 +6,12 @@ echo "get unicorn pid: # " $pid_file
 if [ -f $pid_file ] ;then
   echo "found unicorn.pid"
   u_pid=`ls $pid_file`
-  echo "kill unicorn"
-  kill -9 `cat $u_pid`
+  {
+    echo "kill unicorn"
+    kill -9 `cat $u_pid`
+  } || {
+    echo "cat't kill unicorn anyway"
+  }
 else
   echo "unicorn.pid not found"
 fi
