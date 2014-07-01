@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 echo $1
 pid_file=$1
 echo "get unicorn pid: # " $pid_file

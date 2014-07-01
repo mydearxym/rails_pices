@@ -58,7 +58,7 @@ namespace :deploy do
         run "cd #{release_path}/config/; sh unicorn_stop.sh #{deploy_to}/current/tmp/pids/unicorn.pid "
         puts "@@@ now start ..."
         run "cd #{deploy_to}/current/; bundle exec unicorn_rails -c config/unicorn.rb -D"
-        puts "@@@ restart over ..."
+        puts "@@@ restart done!"
     end
 end
 
