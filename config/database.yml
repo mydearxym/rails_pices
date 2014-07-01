@@ -20,9 +20,10 @@ test:
 
 production:
   adapter: mysql2
+  encoding: utf8
   host : 127.0.0.1
   username: root
   passwprd: 123456
-  database: ringgogodb
+  database: ringgogo_production
   pool: 5
   timeout: 5000

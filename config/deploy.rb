@@ -70,7 +70,7 @@ end
 
 before 'deploy:setup', "deploy:create_log_share"
 after 'deploy:setup', "deploy:create_db"
-after 'deploy:update_code', 'deploy:migrate'
+# after 'deploy:update_code', 'deploy:migrate'
 
 
 # before 'deplay:cold', "deploy:use_1_9_3"
