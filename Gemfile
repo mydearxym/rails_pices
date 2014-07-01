@@ -61,6 +61,8 @@ group :test do
   gem "selenium-webdriver", "~> 2.39.0"
 end
 
+gem "mysql2"
+
 gem 'rake', '10.3.2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

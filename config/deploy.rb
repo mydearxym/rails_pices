@@ -33,6 +33,12 @@ namespace :deploy do
         # run "apt-get install ruby-bundler"
     end
 
+    desc "@@@ create databases"
+    task :create_db do
+        # run "mkdir -p #{shared_path}/log"
+        run "cd #{current_path}; bundle exec rake db:create"
+    end
+
     desc "@@@ installl the bundler"
     task :install_bundler do
         run "cd /usrl/local/#{proj_name}; bundle "
@@ -63,6 +69,7 @@ namespace :deploy do
 end
 
 before 'deploy:setup', "deploy:create_log_share"
+after 'deploy:setup', "deploy:create_db"
 after 'deploy:update_code', 'deploy:migrate'
 
 
