@@ -37,7 +37,7 @@ namespace :deploy do
     desc "@@@ create databases"
     task :create_db do
         # run "mkdir -p #{shared_path}/log"
-        run "cd #{current_path}; bundle exec rake db:create"
+        run "cd #{release_path}; bundle exec rake db:create"
     end
 
     desc "@@@ installl the bundler"
@@ -82,10 +82,11 @@ namespace :deploy do
 end
 
 before 'deploy:setup', "deploy:create_log_share"
-# after 'deploy:setup', "deploy:create_db"
+after 'deploy:setup', "deploy:create_db"
 # after 'deploy:setup', "deploy:migrate"
-# before "deploy:assets:precompile", "deploy:link_db"
-after 'deploy:update_code', 'deploy:bundle_install'
+before "deploy:assets:precompile", "deploy:create_db"
+# after 'deploy:update_code', 'deploy:bundle_install'
+# after 'deploy:update_code', 'deploy:create_db'
 after 'deploy:update_code', 'deploy:migrate'
 
 # before 'deplay:cold', "deploy:use_1_9_3"
