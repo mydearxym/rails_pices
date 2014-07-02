@@ -146,6 +146,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     multi_json (1.10.0)
+    mysql2 (0.3.16)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -203,7 +204,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     rubyzip (1.1.4)
-    rvm-capistrano (1.5.2)
+    rvm-capistrano (1.5.3)
       capistrano (~> 2.15.4)
     sass (3.3.7)
     sass-rails (3.2.6)
@@ -267,6 +268,7 @@ DEPENDENCIES
   launchy (~> 2.3.0)
   less-rails
   mime-types
+  mysql2
   net-ssh (~> 2.7.0)
   pry
   rails (= 3.2.13)

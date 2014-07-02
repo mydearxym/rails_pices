@@ -62,6 +62,13 @@ namespace :deploy do
         run "cd #{release_path}; bundle exec rake db:migrate"
     end
 
+    desc "@@@ bundle install"
+    task :bundle_install do
+        puts "@@@ now bundle install ..."
+        # default migrate case tags gem problem
+        run "cd #{release_path}; bundle exec bundle install"
+    end
+
     desc "@@@ restart "
     task :restart do
         puts "@@@ now restart the server ..."
@@ -78,7 +85,7 @@ before 'deploy:setup', "deploy:create_log_share"
 # after 'deploy:setup', "deploy:create_db"
 # after 'deploy:setup', "deploy:migrate"
 # before "deploy:assets:precompile", "deploy:link_db"
-# after 'deploy:update_code', 'deploy:symlink_db'
+after 'deploy:update_code', 'deploy:bundle_install'
 after 'deploy:update_code', 'deploy:migrate'
 
 # before 'deplay:cold', "deploy:use_1_9_3"

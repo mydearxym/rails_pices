@@ -62,8 +62,8 @@ group :test do
 end
 
 gem 'rake', '10.3.2'
-gem 'mysql'
-# gem 'mysql2'
+# gem 'mysql'
+gem 'mysql2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
