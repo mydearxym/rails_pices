@@ -9,9 +9,9 @@ development:
   pool: 5
   timeout: 5000
   username: root
-  # password: root
+  password: 123456
   encoding: utf8
-  host: localhost
+  # host: localhost
 
   # adapter: sqlite3
   # database: db/development.sqlite3
@@ -27,8 +27,9 @@ test:
   pool: 5
   timeout: 5000
   username: root
+  password: 123456
   encoding: utf8
-  host: localhost
+ # host: localhost
 
   # adapter: sqlite3
   # database: db/test.sqlite3

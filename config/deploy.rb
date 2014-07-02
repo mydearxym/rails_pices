@@ -37,7 +37,7 @@ namespace :deploy do
     desc "@@@ create databases"
     task :create_db do
         # run "mkdir -p #{shared_path}/log"
-        run "cd #{release_path}; bundle exec rake db:create"
+        run "cd #{release_path}; bundle exec rake db:create --trace"
     end
 
     desc "@@@ installl the bundler"
