@@ -5,6 +5,8 @@ $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
 proj_name="ringgogo"
 
+set :stages, %w(production)
+
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system  # solve the bundler can't found problem
 set :log_level, :debug
@@ -37,7 +39,7 @@ namespace :deploy do
     desc "@@@ create databases"
     task :create_db do
         # run "mkdir -p #{shared_path}/log"
-        run "cd #{release_path}; bundle exec rake db:create --trace"
+        run "cd #{release_path}; bundle exec RAILS_ENV=production  rake db:create"
     end
 
     desc "@@@ installl the bundler"
@@ -59,7 +61,7 @@ namespace :deploy do
     task :migrate do
         puts "@@@ now migrate the db ..."
         # default migrate case tags gem problem
-        run "cd #{release_path}; bundle exec rake db:migrate"
+        run "cd #{release_path}; bundle exec rake db:migrate RAILS_ENV='production'"
     end
 
     desc "@@@ bundle install"
@@ -71,7 +73,7 @@ namespace :deploy do
 
     desc "@@@ restart "
     task :restart do
-        puts "@@@ now restart the server ..."
+        puts "@@@ now restart the server .."
         puts "@@@ now stop ..."
         # run "ls #{deploy_to}/current/tmp/pids/unicorn.pid && kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
         run "cd #{release_path}/config/; sh unicorn_stop.sh #{deploy_to}/current/tmp/pids/unicorn.pid "
@@ -82,9 +84,9 @@ namespace :deploy do
 end
 
 before 'deploy:setup', "deploy:create_log_share"
-after 'deploy:setup', "deploy:create_db"
+# after 'deploy:setup', "deploy:create_db"
 # after 'deploy:setup', "deploy:migrate"
-before "deploy:assets:precompile", "deploy:create_db"
+# before "deploy:assets:precompile", "deploy:create_db"
 # after 'deploy:update_code', 'deploy:bundle_install'
 # after 'deploy:update_code', 'deploy:create_db'
 after 'deploy:update_code', 'deploy:migrate'

@@ -1,0 +1,37 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+2014-07-02 22:26:06 INFO -- Migrating to CreateRingtones (20140511134407)
+2014-07-02 22:26:07 INFO -- Migrating to DeviseCreateUsers (20140515132420)
+2014-07-02 22:26:07 INFO -- Migrating to AddUsernameToUsers (20140520115917)
+2014-07-02 22:26:07 INFO -- Migrating to CreateAttachments (20140521142120)
+2014-07-02 22:26:07 INFO -- Migrating to AddAttachmentToRingtones (20140524054218)
+2014-07-02 22:26:07 INFO -- Migrating to ActsAsTaggableOnMigration (20140525083444)
+2014-07-02 22:26:08 INFO -- Migrating to AddMissingUniqueIndices (20140525083445)
+2014-07-02 22:26:09 INFO -- Migrating to AddTaggingsCounterCacheToTags (20140525083446)
+Connecting to database specified by database.yml
+2014-07-02 22:55:39 INFO -- Migrating to CreateRingtones (20140511134407)
+2014-07-02 22:55:39 INFO -- Migrating to DeviseCreateUsers (20140515132420)
+2014-07-02 22:55:39 INFO -- Migrating to AddUsernameToUsers (20140520115917)
+2014-07-02 22:55:39 INFO -- Migrating to CreateAttachments (20140521142120)
+2014-07-02 22:55:39 INFO -- Migrating to AddAttachmentToRingtones (20140524054218)
+2014-07-02 22:55:39 INFO -- Migrating to ActsAsTaggableOnMigration (20140525083444)
+2014-07-02 22:55:39 INFO -- Migrating to AddMissingUniqueIndices (20140525083445)
+2014-07-02 22:55:39 INFO -- Migrating to AddTaggingsCounterCacheToTags (20140525083446)
+Connecting to database specified by database.yml
+2014-07-02 23:12:52 INFO -- Migrating to CreateRingtones (20140511134407)
+2014-07-02 23:12:52 INFO -- Migrating to DeviseCreateUsers (20140515132420)
+2014-07-02 23:12:52 INFO -- Migrating to AddUsernameToUsers (20140520115917)
+2014-07-02 23:12:52 INFO -- Migrating to CreateAttachments (20140521142120)
+2014-07-02 23:12:52 INFO -- Migrating to AddAttachmentToRingtones (20140524054218)
+2014-07-02 23:12:52 INFO -- Migrating to ActsAsTaggableOnMigration (20140525083444)
+2014-07-02 23:12:52 INFO -- Migrating to AddMissingUniqueIndices (20140525083445)
+2014-07-02 23:12:52 INFO -- Migrating to AddTaggingsCounterCacheToTags (20140525083446)
+Connecting to database specified by database.yml
+2014-07-02 23:20:35 INFO -- Migrating to CreateRingtones (20140511134407)
+2014-07-02 23:20:35 INFO -- Migrating to DeviseCreateUsers (20140515132420)
+2014-07-02 23:20:35 INFO -- Migrating to AddUsernameToUsers (20140520115917)
+2014-07-02 23:20:35 INFO -- Migrating to CreateAttachments (20140521142120)
+2014-07-02 23:20:35 INFO -- Migrating to AddAttachmentToRingtones (20140524054218)
+2014-07-02 23:20:35 INFO -- Migrating to ActsAsTaggableOnMigration (20140525083444)
+2014-07-02 23:20:35 INFO -- Migrating to AddMissingUniqueIndices (20140525083445)
