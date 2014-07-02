@@ -10,7 +10,7 @@ gem 'sqlite3'
 # gem 'unicorn'
 gem 'devise'
 
-gem "pry"
+gem "pry", :group => :development
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -61,9 +61,10 @@ group :test do
   gem "selenium-webdriver", "~> 2.39.0"
 end
 
-# gem "mysql2", '0.3.10' 
-
 gem 'rake', '10.3.2'
+gem 'mysql'
+# gem 'mysql2'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

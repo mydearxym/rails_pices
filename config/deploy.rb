@@ -1,7 +1,6 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
 
-
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
 proj_name="ringgogo"
@@ -30,6 +29,8 @@ namespace :deploy do
     desc "@@@ mkdir a dir log Cap, or will trigger error"
     task :create_log_share do
         run "mkdir -p #{shared_path}/log"
+        # run "mkdir -p #{shared_path}/config"
+        
         # run "apt-get install ruby-bundler"
     end
 
@@ -47,6 +48,11 @@ namespace :deploy do
     desc "@@@ use ruby 1.9.3"
     task :use_1_9_3 do
         run "rvm use 1.9.3"
+    end
+
+    desc "@@@ Symlinks the database.yml"
+    task :link_db, :roles => :app do
+        run "ln -nfs #{deploy_to}/shared/database.yml #{release_path}/config/database.yml"
     end
 
     desc "@@@ rewirte migrate"
@@ -69,9 +75,11 @@ namespace :deploy do
 end
 
 before 'deploy:setup', "deploy:create_log_share"
-after 'deploy:setup', "deploy:create_db"
-# after 'deploy:update_code', 'deploy:migrate'
-
+# after 'deploy:setup', "deploy:create_db"
+# after 'deploy:setup', "deploy:migrate"
+# before "deploy:assets:precompile", "deploy:link_db"
+# after 'deploy:update_code', 'deploy:symlink_db'
+after 'deploy:update_code', 'deploy:migrate'
 
 # before 'deplay:cold', "deploy:use_1_9_3"
 # after 'deplay:cold', "deploy:install_bundler"
