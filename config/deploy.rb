@@ -61,7 +61,8 @@ namespace :deploy do
     task :migrate do
         puts "@@@ now migrate the db ..."
         # default migrate case tags gem problem
-        run "cd #{release_path}; bundle exec rake db:migrate RAILS_ENV='production'"
+        # run "cd #{release_path}; bundle exec rake db:migrate RAILS_ENV='production'"
+        run "cd #{release_path}; bundle exec rake db:migrate"
     end
 
     desc "@@@ bundle install"

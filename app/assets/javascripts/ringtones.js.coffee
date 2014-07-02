@@ -15,7 +15,7 @@ $(document).ready ->
   $("#fileupload").fileupload
     datatype: "script"
     add: (e, data)-> 
-      types = /(\.|\/)(gif|jpe?g|zip|tbz)$/i
+      types = /(\.|\/)(gif|jpe?g|zip|png)$/i
       file = data.files[0]
       if types.test(file.type) or types.test(file.name)
         data.context = $("#progress_sidebar")
