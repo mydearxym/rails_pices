@@ -4,6 +4,7 @@ require File.expand_path('../application', __FILE__)
 # Initialize the rails application
 TestNew::Application.initialize!
 
+ENV['RAILS_ENV'] = 'production'
 class Logger
 	def format_message(level, time, progname, msg)
 		"#{time.to_s(:db)} #{level} -- #{msg}\n"
