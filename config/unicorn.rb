@@ -1,5 +1,7 @@
 
-rails_env = ENV['RAILS_ENV'] || 'production'
+# rails_env = ENV['RAILS_ENV'] || 'production'
+rails_env = 'production'
+
 app_path = "/usr/local/ringgogo/current"
 
 # listen "/tmp/unicorn.ringgogo.sock"
