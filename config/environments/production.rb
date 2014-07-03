@@ -1,5 +1,7 @@
 TestNew::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  # xym add 
+  config.assets.debug = false
 
   # Code is not reloaded between requests
   config.cache_classes = true
