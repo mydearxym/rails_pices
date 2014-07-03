@@ -10,7 +10,7 @@ $(document).ready ->
       $(this).find("img").hide()
   ,".tag_column"
 
-  console.log "init fileupload plugin"
+  console.log "init fileupload plugin in coffee"
 
   $("#fileupload").fileupload
     datatype: "script"
