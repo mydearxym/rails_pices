@@ -62,7 +62,15 @@ namespace :deploy do
         puts "@@@ now migrate the db ..."
         # default migrate case tags gem problem
         # run "cd #{release_path}; bundle exec rake db:migrate RAILS_ENV='production'"
-        run "cd #{release_path}; bundle exec rake db:migrate"
+        run "cd #{release_path}; bundle exec rake db:migrate RAILS_ENV=production"
+    end
+
+    desc "@@@ set_env"
+    task :set_env do
+        puts "@@@ set env"
+        # default migrate case tags gem problem
+        # run "cd #{release_path}; bundle exec rake db:migrate RAILS_ENV='production'"
+        run "cd #{release_path}; export RAILS_ENV=production"
     end
 
     desc "@@@ bundle install"
@@ -79,7 +87,7 @@ namespace :deploy do
         # run "ls #{deploy_to}/current/tmp/pids/unicorn.pid && kill -9 `cat #{deploy_to}/current/tmp/pids/unicorn.pid`"
         run "cd #{release_path}/config/; sh unicorn_stop.sh #{deploy_to}/current/tmp/pids/unicorn.pid "
         puts "@@@ now start ..."
-        run "cd #{deploy_to}/current/; bundle exec unicorn_rails -c config/unicorn.rb -D"
+        run "cd #{deploy_to}/current/; bundle exec unicorn_rails -c config/unicorn.rb -D -E production"
         puts "@@@ restart done!"
     end
 end
@@ -91,6 +99,8 @@ before 'deploy:setup', "deploy:create_log_share"
 # after 'deploy:update_code', 'deploy:bundle_install'
 # after 'deploy:update_code', 'deploy:create_db'
 after 'deploy:update_code', 'deploy:migrate'
+after 'deploy:update_code', 'deploy:set_env'
+
 
 # before 'deplay:cold', "deploy:use_1_9_3"
 # after 'deplay:cold', "deploy:install_bundler"
