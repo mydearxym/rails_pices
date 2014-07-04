@@ -17,6 +17,7 @@ class Attachment < ActiveRecord::Base
   		self.content_type = attachment.file.content_type
   		self.file_size  = attachment.file.size
   		self.file_name = attachment.file.original_filename
+    end
   end
 
 end

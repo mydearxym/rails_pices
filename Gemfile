@@ -27,15 +27,16 @@ group :assets do
   # gem "twitter-bootstrap-rails"
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',  branch: 'bootstrap3'
   # gem 'acts-as-taggable-on'  
-  gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git', branch: "3.1-stable"
-  gem 'uglifier', '>= 1.0.3'
-
-  gem 'jquery-fileupload-rails'
-  gem 'jquery-ui-rails'
-  gem 'rails3-jquery-autocomplete'
-  gem 'gon'
+  # gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git', branch: "3.1-stable"
 end
 
+gem 'uglifier', '>= 1.0.3'
+gem 'jquery-fileupload-rails'
+gem 'jquery-ui-rails'
+gem 'rails3-jquery-autocomplete'
+gem 'gon'
+
+gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git', branch: "3.1-stable"
 
 # use  ~> 3.1.0  the jquery animate will not work !!! fuck !
 # gem 'jquery-rails', '~> 3.1.0'
