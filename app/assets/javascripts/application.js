@@ -19,3 +19,11 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
+
+
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash').fadeOut(3000);
+  }, 3000);
+ })

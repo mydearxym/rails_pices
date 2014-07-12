@@ -8,7 +8,11 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 # gem 'unicorn'
-gem 'devise'
+# gem 'devise'
+gem 'cancan'
+gem 'authlogic'
+gem 'scrypt'
+gem 'cancan'
 
 gem "pry", :group => :development
 

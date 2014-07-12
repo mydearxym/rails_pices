@@ -1,0 +1,11 @@
+
+
+<h4 class="text-info">login page</h4>
+
+<%= simple_form_for @user_session, :url => user_session_path do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :login, label: "Username:", required: true %>
+  <%= f.input :password, label: "password: " %>
+  <%= f.button :submit  ,value: "login",  class: "btn btn-primary"%>
+<% end %>
+

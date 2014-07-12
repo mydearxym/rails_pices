@@ -1,0 +1,16 @@
+
+<h4 class="text-info">用户设置</h4>
+
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :login, label: "用户名:", required: true %>
+  <%= f.input :email, label: "电子邮箱", required: true %>
+<!--   
+  <%= f.input :password, label: "密码: " %>
+  <%= f.input :password_confirmation, label: "密码确认:" %>
+ -->
+  <%= f.button :submit , value: "保存", class: "btn btn-primary"%>
+
+<% end %>
+
