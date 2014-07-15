@@ -16,14 +16,15 @@
 //= require autocomplete-rails
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
-//= require twitter/bootstrap
+//= require twitter/bootstrap/tooltip.js
+//= require twitter/bootstrap/popover.js
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
 
 
 
-$(document).ready(function(){
-  setTimeout(function(){
-    $('#flash').fadeOut(3000);
-  }, 3000);
- })
+// $(document).ready(function(){
+//   setTimeout(function(){
+//     $('#flash').fadeOut(3000);
+//   }, 3000);
+//  })

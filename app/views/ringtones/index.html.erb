@@ -28,7 +28,10 @@ phone: <%= number_to_phone(15982398614) %>
 </div>
 
 <%= render "multiupload" %>
+
+<% if role_is?("admin") %>
 <a id="upload-menu" class="btn btn-primary btn-sm fr">上传铃声</a>
+<% end %>
 
 <br></br>
 

@@ -6,30 +6,37 @@ class User < ActiveRecord::Base
 #     #c.validate_password_field = false
   end 
 
-  # ROLES = %w[admin moderator author banned]
-
-#   @@need_email_confirm = false 
-
   attr_accessible :login, :password, :password_confirmation, :email
   attr_accessible :qq_uid, :qq_access_token, :sina_uid, :sina_access_token
   attr_accessible :roles
+
+  ROLES = %w[admin moderator author]
+  # ROLES = %w[管理员 监督员 作者]
+
+#   @@need_email_confirm = false 
 
 #   has_many :articles
 
 #   #validates :password, :presence => { :if => :password_required? }, :confirmation => true
 
-  # def roles=(roles)
-  #   self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
-  # end 
+  def roles=(roles)
+    # self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+  end 
 
-  # def roles 
-  #   ROLES.reject do |r| ((roles_mask.to_i || 0) & 2**ROLES.index(r)).zero?
-  #   end 
-  # end 
+  def roles 
+    # ROLES.reject do |r| ((roles_mask.to_i || 0) & 2**ROLES.index(r)).zero?
+    # end 
+    ROLES.reject { |r| ((roles_mask || 0) & 2**ROLES.index(r)).zero? }
+  end 
 
-  # def role?(role)
-  # 	roles.include? role.to_s
-  # end
+  def role?(role)
+  	roles.include? role.to_s
+  end
+
+  def role_symboles
+  	roles.map(&:to_sym)
+  end
 
 #   def is?(role)
 #     roles.include?(role.to_s)
@@ -69,10 +76,10 @@ class User < ActiveRecord::Base
 #     end 
 #   end 
 
-#   def deliver_password_reset_instructions!
-#     reset_perishable_token!
-#     Notifier.password_reset_instructions(self).deliver
-#   end 
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    MailerDude.password_reset_instructions(self).deliver
+  end 
 
 #   def signup!
 #     if @@need_email_confirm
@@ -95,12 +102,14 @@ class User < ActiveRecord::Base
 #     save
 #   end 
 
-#   def reset_confirm_email_token!
-#     self.confirm_email_token = Authlogic::Random.friendly_token
-#     self.confirm_email_send = Time.now
-#     self.confirm_email_at = ""
-#     save_without_session_maintenance(:validate => false)
-#   end 
+  # Authlogic gives you. It basically resets the field to a unique “friendly” token and then saves the record.
+
+  # def reset_confirm_email_token!
+  #   self.confirm_email_token = Authlogic::Random.friendly_token
+  #   self.confirm_email_send = Time.now
+  #   self.confirm_email_at = ""
+  #   save_without_session_maintenance(:validate => false)
+  # end 
 
 #   def clear_confirm_email_token!
 #     self.confirm_email_token = ""
@@ -109,10 +118,10 @@ class User < ActiveRecord::Base
 #     save_without_session_maintenance(:validate => false)
 #   end 
 
-#   def deliver_activation_instructions!
-#     reset_confirm_email_token!
-#     Notifier.activation_instructions(self).deliver
-#   end 
+  def deliver_activation_instructions!
+    reset_confirm_email_token!
+    MailerDude.activation_instructions(self).deliver
+  end 
 
 #   def deliver_activation_confirmation!
 #     clear_confirm_email_token!

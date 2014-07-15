@@ -69,6 +69,7 @@ module TestNew
     config.i18n.default_locale = :"en"
     # config.i18n.default_locale = "cn"
     #config.i18n.default_locale = :en
+    config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
   end
 end

@@ -1,5 +1,5 @@
-<h4 style="color:#c9bc4e">this is user new.html => begin</h4>
 
+<hr>
 <h3>用户注册:</h3>
 <!-- user model acts_as_authentic之后，authlogic会自动的为user model加上一些验证，比如login必填、login唯一、email格式、email必填、email唯一、password必填、password长度、password_confirmation和password必须相同等…… 
 注意这些不是 simple_form 加的， 而是 acts_as_authentic 自己加的
@@ -12,11 +12,11 @@
   <%= f.input :password, label: "密码: " %>
   <%= f.input :password_confirmation, label: "密码确认:" %>
 
+  <%= f.input :roles, collection: User::ROLES, as: :check_boxes %>
+
   <%= f.button :submit , value: "注册", class: "btn btn-primary"%>
 
 <% end %>
-
-<h4 style="color:#c9bc4e">this is user new.html => end</h4>
 
 
 

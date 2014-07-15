@@ -1,0 +1,13 @@
+<h1>Change my password</h1>
+
+User: <%= @user.login %>
+
+
+<%= simple_form_for @user, :url => password_reset_path , method: :put do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :password, label: "新密码:", required: true %>
+  <%= f.input :password_confirmation, label: "确认：", required: true %>
+  <%= f.button :submit , value: "保存", class: "btn btn-primary"%>
+<% end %>
+
+

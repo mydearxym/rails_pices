@@ -1,0 +1,17 @@
+
+<h1>请输入您的注册邮箱地址</h1>
+</br>
+
+
+
+<%= simple_form_for @emptyone, :url => password_resets_path , method: :post do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email, label: "注册邮箱: " %>
+
+  <%= f.button :submit , value: "发送邮件", class: "btn btn-primary"%>
+
+
+<% end %>
+
+
+
