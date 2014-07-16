@@ -4,8 +4,8 @@
 
 <%= simple_form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_notification %>
-  <%= f.input :login, label: "Username:", required: true %>
-  <%= f.input :password, label: "password: " %>
-  <%= f.button :submit  ,value: "login",  class: "btn btn-primary"%> <%= link_to("忘记密码?", new_password_reset_path , class: "text-info") %>
+  <%= f.input :login, label: t("user.name"), required: true %>
+  <%= f.input :password, label: t("user.password") %>
+  <%= f.button :submit  ,value: "login",  class: "btn btn-primary"%> <%= link_to(t("user.forget"), new_password_reset_path , class: "text-info") %>
 <% end %>
 

@@ -8,4 +8,37 @@ zh:
     name: "名称"
     tag: "标签"
     attachment: "附件"
+    upload_file: "上传铃声"
+  user:
+    login: "登陆"
+    register: "注册"
+    name: "用户名: "
+    email: "电子邮箱: "
+    password: "密码: "
+    password_again: "再次输入密码: "
+    new_password: "新密码:"
+    save: "保存"
+    forget: "忘记密码？"
+    log_out: "登出"
+    my_account: "我的账户"
+    ask_mail_addr: "请输入您的注册邮箱: "
+    send_mail: "发送邮件"
+  mail_hint:
+    reset_password: "铃声狗狗：重置密码请求"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

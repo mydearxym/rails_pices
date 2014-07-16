@@ -1,24 +1,3 @@
-<!-- 
-test helper:
-
-size:<%= number_to_human_size(123) %>
-size:<%= number_to_human_size(1233434) %>
-size:<%= number_to_human_size(1234567, precision: 2, separator: '.') %>
-money: <%= number_to_currency(1234567890.506, locale: :fr) %>
-
-percent:<%= number_to_percentage(98) %>
-phone: <%= number_to_phone(15982398614) %>
-</br>
-<%= highlight('You searched for: rails', 'rails', highlighter: '<span class="highlighter">\1</span>') %><%= tag("br") %>
-<%= highlight('You searched for: rails and nodejs', ['rails','node'], highlighter: '<span class="highlighter">\1</span>') %><%= tag('br') %>
-
-<%= pluralize(2,'apple') %><%= tag('br') %>
-<%= truncate("this is a very very long sentence", length:10) %><%= tag('br') %>
-<%= word_wrap("once upon a time", line_width: 2) %>
-
-<%= debug request.query_string %>
- -->
-
 
 <div id="process_area"></div>
 <h1 class="text-danger"><%= image_tag("gogo_logo.png") %>  <%= t 'index.title' %> </h1>
@@ -29,8 +8,10 @@ phone: <%= number_to_phone(15982398614) %>
 
 <%= render "multiupload" %>
 
+<!-- <a id="upload-menu" class="btn btn-primary btn-sm fr"><%= t 'main_tb.upload_file' %></a> -->
+
 <% if role_is?("admin") %>
-<a id="upload-menu" class="btn btn-primary btn-sm fr">上传铃声</a>
+<a id="upload-menu" class="btn btn-primary btn-sm fr"><%= t 'main_tb.upload_file' %></a>
 <% end %>
 
 <br></br>
