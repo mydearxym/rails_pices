@@ -5,7 +5,7 @@
 注意这些不是 simple_form 加的， 而是 acts_as_authentic 自己加的
  -->
 
-<%= simple_form_for @user, :url => accout_path do |f| %>
+<%= simple_form_for @user, :url => account_path do |f| %>
   <%= f.error_notification %>
   <%= f.input :login, label: t("user.name"), required: true %>
   <%= f.input :email, label: t("user.email"), required: true %>

@@ -40,6 +40,12 @@ class UsersController < ApplicationController
   def show 
     # @user = @current_user
     @user = current_user
+
+    respond_to do |format|
+      format.html 
+      format.json { hello "this is json from rails!"}
+    end
+
   end 
 
   def edit 
@@ -51,7 +57,7 @@ class UsersController < ApplicationController
     @user = current_user 
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account update"
-      redirect_to accout_url
+      redirect_to account_url
     else 
       render 'edit'
     end 

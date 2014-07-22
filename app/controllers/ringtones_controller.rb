@@ -26,6 +26,7 @@ class RingtonesController < ApplicationController
     end
   end
   
+
   # GET /ringtones/1
   # GET /ringtones/1.json
   def show
@@ -157,6 +158,44 @@ class RingtonesController < ApplicationController
       format.html { render partial: "multiupload", layout: false }
     end
     
+  end
+
+  def api
+    # render json: [
+    #   {hello: "rails"},
+    #   {hello: "rails"},
+    #   {hello: "rails"},
+    #   {hello: "rails"},
+    #   {hello: "rails"},
+    #   {hello: "rails"},
+    # ]
+
+    respond_to do |f|
+      # f.html { render text: "hello rails html"}
+      f.html { render inline: "<h1>hello rails html</h1>"}
+      f.json { render json: [
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        {hepp: "rails", age: 45},
+        ]}
+    end
   end
 
 end
